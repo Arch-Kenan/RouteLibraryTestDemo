@@ -36,9 +36,6 @@
     <ClInclude Include="copyCtor.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="zigzag_Method.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -51,9 +48,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="GC.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="zigzag_Method.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
