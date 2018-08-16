@@ -27,9 +27,6 @@
     <ClInclude Include="RouteCurveImpl.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="utility.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -37,6 +34,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="zigzag_Method.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="testRoute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="methodA1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,12 +12,11 @@
 #include <osgViewer/ViewerEventHandlers>
 #include <osgGA/StateSetManipulator>
 #include "RouteCurveImpl.h"
-#include "test.h"
 #include <utility>
 #include <queue>
 #include <functional>
 #include "copyCtor.h"
-
+#include "testRoute.h"
 
 
 
@@ -25,7 +24,16 @@
 int main()
 {
 	
+	std::ifstream   file("../testList.txt");
+	std::istreambuf_iterator<char> beg(file), end;
+	if (file)
+	{
+		std::string   fileStr(beg, end);
+		const char* arr = "HorizontalCurveRouteData";
+		std::cout << testK(fileStr.c_str(), arr);
+	}
 
+	file.close();
 	
 	
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
