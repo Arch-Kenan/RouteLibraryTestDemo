@@ -20,20 +20,18 @@
 
 
 
+
 //平曲线测试主程序
 int main()
 {
-	
-	std::ifstream   file("../testList.txt");
-	std::istreambuf_iterator<char> beg(file), end;
-	if (file)
+
+	int arr[] = { 5, 0, 9, 4, 12, 39, 34, 21, 78, 31 };
+	insertTest(arr, 10);
+	for (auto i : arr)
 	{
-		std::string   fileStr(beg, end);
-		const char* arr = "HorizontalCurveRouteData";
-		std::cout << testK(fileStr.c_str(), arr);
+		cout << i << "   ";
 	}
 
-	file.close();
 	
 	
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
