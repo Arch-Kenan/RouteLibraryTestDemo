@@ -17,101 +17,21 @@
 #include <functional>
 #include "copyCtor.h"
 #include "testRoute.h"
+#include "Queen.h"
 
 
-#include <stdio.h>
-#include <stdlib.h>
-
-const int N = 20;   
-int q[N];         
-int cont = 0;     
-				  
-void print(int n)
-{
-	int i, j;
-	cont++;
-	printf("第%d个解：", cont);
-	for (i = 1; i <= n; i++)
-		printf("(%d,%d) ", i, q[i]);
-	printf("\n");
-	for (i = 1; i <= n; i++)        //行
-	{
-		for (j = 1; j <= n; j++)    //列
-		{
-			if (q[i] != j)
-				printf("x ");
-			else
-				printf("Q ");
-		}
-		printf("\n");
-	}
-}
 
 
-int find(int i, int k)
-{
-	int j = 1;
-	while (j < i)  
-	{
-		
-		if (q[j] == k || abs(j - i) == abs(q[j] - k))
-			return 0;
-		j++;
-	}
-	return 1;
-}
-
-
-void place(int k, int n)
-{
-	int j;
-	if (k > n)
-		print(n);
-	else
-	{
-		for (j = 1; j <= n; j++)   //试探第k行的每一个列
-		{
-			if (find(k, j))
-			{
-				q[k] = j;
-				place(k + 1, n);  //递归总是在成功完成了上次的任务的时候才做下一个任务
-			}
-		}
-	}
-}
-
-int main(void)
-{
-	int n;
-	printf("请输入皇后的个数(n<=20),n=:");
-	scanf("%d", &n);
-	if (n > 20)
-		printf("n值太大，不能求解!\n");
-	else
-	{
-		printf("%d皇后问题求解如下(每列的皇后所在的行数):\n", n);
-		place(1, n);        //问题从最初状态解起
-		printf("\n");
-	}
-	system("pause");
-	return 0;
-}
-
-
+				 
 
 //平曲线测试主程序
-int maintt()
+int main()
 {
+	int* pArr = new int[8];
+	place(pArr, 0, 8);
+	return 0;
 
-	int arr[] = { 5, 0, 9, 4, 12, 39, 34, 21, 78, 31 };
-	insertTest(arr, 10);
-	for (auto i : arr)
-	{
-		cout << i << "   ";
-	}
 
-	
-	
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
 	osg::ref_ptr<osg::Group> root = new osg::Group;
 	osg::ref_ptr<osg::Geode> geode = new osg::Geode;
