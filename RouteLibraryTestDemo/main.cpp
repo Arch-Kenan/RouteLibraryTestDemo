@@ -4,32 +4,30 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
-//include osg lib
-#include <osgDB/ReadFile>
-#include <osgViewer/Viewer>
-#include "osg/MatrixTransform"
-#include <osgViewer/ViewerEventHandlers>
-#include <osgGA/StateSetManipulator>
-#include "RouteCurveImpl.h"
 #include <utility>
 #include <queue>
 #include <functional>
-#include "copyCtor.h"
-#include "testRoute.h"
-#include "Queen.h"
+
+//include osg lib
+#include "osgDB/ReadFile"
+#include "osgViewer/Viewer"
+#include "osg/MatrixTransform"
+#include "osgViewer/ViewerEventHandlers"
+#include "osgGA/StateSetManipulator"
+
+//inlcude other project
+#include "../routeLib/test.h"
+
+#include "RouteCurveImpl.h"
+#include "dynamic.h"
+#include "newton.h"
 
 
-
-
-				 
 
 //平曲线测试主程序
 int main()
 {
-	int* pArr = new int[8];
-	place(pArr, 0, 8);
-	return 0;
+
 
 
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
@@ -67,7 +65,7 @@ int main()
 		arrs->push_back(tempPnt);
 		roateRadian += delta;
 	}
-	//test(*arrs);
+
 	geom->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::LINES, 0, arrs->size()));
 
 	osg::ref_ptr<osg::Geometry> geom2to3 = new osg::Geometry;
@@ -79,23 +77,23 @@ int main()
 	std::vector<osg::Vec2d>  result2Dto3D;
 	std::vector<osg::Vec2d>  curveTangent;
 
-	test4(result2Dto3D, resultPnts, curveTangent);
+	/*test4(result2Dto3D, resultPnts, curveTangent);*/
 
 
 
 
 
-	for (auto itr = result2Dto3D.begin(); itr != result2Dto3D.end(); itr++)
-	{
-		arrs2to3->push_back(osg::Vec3d(itr->x(), 0, itr->y()));
-	}
+	//for (auto itr = result2Dto3D.begin(); itr != result2Dto3D.end(); itr++)
+	//{
+	//	arrs2to3->push_back(osg::Vec3d(itr->x(), 0, itr->y()));
+	//}
 
-	osg::ref_ptr<osg::DrawElementsUInt>    primitive = new osg::DrawElementsUInt(osg::PrimitiveSet::LINE_STRIP);
-	for (int i = 3; i < arrs2to3->size(); i++)
-	{
-		primitive->push_back(i);
-	}
-	geom2to3->addPrimitiveSet(primitive.get());
+	//osg::ref_ptr<osg::DrawElementsUInt>    primitive = new osg::DrawElementsUInt(osg::PrimitiveSet::LINE_STRIP);
+	//for (int i = 3; i < arrs2to3->size(); i++)
+	//{
+	//	primitive->push_back(i);
+	//}
+	//geom2to3->addPrimitiveSet(primitive.get());
 
 
 	//viewer->setSceneData(root);

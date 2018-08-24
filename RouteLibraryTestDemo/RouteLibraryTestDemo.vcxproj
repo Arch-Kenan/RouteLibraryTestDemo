@@ -155,7 +155,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="dynamic.h" />
     <ClInclude Include="methodA1.h" />
+    <ClInclude Include="newton.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="RouteCurveData.h" />
     <ClInclude Include="RouteCurveImpl.h" />
