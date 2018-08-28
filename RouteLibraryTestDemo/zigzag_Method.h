@@ -26,7 +26,6 @@ enum ZIGZAG_METHOD_RESULT_TYPE
 
 
 //3.1.1 圆弧连接方式
-
 enum ARC_JOIN_TYPE
 {
 	AJT_S = 0,				//S-shaped curve
