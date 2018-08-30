@@ -5,6 +5,7 @@
 
 
 
+
 double newtonSqrt(double x)
 {
 	if (x <0)
@@ -20,6 +21,17 @@ double newtonSqrt(double x)
 	} while (abs(res - lastRes) > FLT_MIN);
 	return lastRes;
 }
+
+
+void swap(int& a, int& b)
+{
+	a = a ^ b;
+	b = a ^ b;
+	a = b ^ a;
+}
+
+
+
 
 //DWORD t1 = clock();
 //for (size_t i = 0; i < 10000; i++)

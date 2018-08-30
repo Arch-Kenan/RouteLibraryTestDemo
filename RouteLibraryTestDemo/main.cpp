@@ -26,12 +26,12 @@
 //平曲线测试主程序
 int main()
 {
-	int n = 25;
-	vector<int>   arr(n + 1, -1);
-	DWORD  t1 = clock();
-	int num = breakInteger1( n);
-	DWORD  t2 = clock();
-	std::cout << num << "   " << t2 - t1 << endl;
+	std::srand(time(0));
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << std::rand() << "  ";
+	}
+
 
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
 	osg::ref_ptr<osg::Group> root = new osg::Group;
