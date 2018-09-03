@@ -3,6 +3,7 @@
 #include "utility.h"
 #include "RouteCurveImpl.h"
 
+
 const int _devideNum = 100;
 
 
@@ -97,6 +98,7 @@ bool RouteCurveImpl::initHorizontalTangent()
 	}
 	return true;
 }
+
 
 
 //生成绘制的的插值点，插值点的数目由 DEVIDENUM 宏定义

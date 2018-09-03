@@ -9,26 +9,15 @@
 
 //include osg lib
 #include <osgDB/ReadFile>
+#include <osgDB/ReadFile>
 #include <osgViewer/Viewer>
 
 #include <osgViewer/ViewerEventHandlers>
 #include <osgGA/StateSetManipulator>
+
 #include "RouteCurveImpl.h"
-int testK(const char* source, const char* target);
-void makeNext(const char* arr, const int size, int result[]);
-//test file
-//std::ifstream   file("../testList.txt");
-//std::istreambuf_iterator<char> beg(file), end;
-//if (file)
-//{
-//	std::string   fileStr(beg, end);
-//	
-//	const char* arr = "HorizontalCurveRouteData";
 
-//	std::cout << fileStr.substr(fileStr.find(arr), 22);
-//}
 
-//file.close();
 
 void test(osg::Vec3dArray& arrays)
 {
@@ -81,57 +70,8 @@ void test1(std::vector<osg::Vec2d>& result_points)
 
 }
 
-//int arr[] = { 5, 0, 9, 4, 12, 39, 34, 21, 78, 31 };
-//sStest(arr, 10);
-//for (auto i : arr)
-//{
-//	cout << i << "   ";
-//}
-//
-void bbstest(int arr[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		int flag = true;
-		for (int j = 1; j < size - i; j++)
-		{
-			if (arr[j - 1] > arr[j])
-			{
-				int temp = arr[j - 1];
-				arr[j - 1] = arr[j];
-				arr[j] = temp;
-				flag = false;
-			}
-		}
-		if (flag)
-		{
-			break;
-		}
-
-	}
-}
 
 
-void sStest(int arr[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		int min = i;
-		for (int j = i+1; j < size; j++)
-		{
-			if (arr[j] < arr[min])
-			{
-				min = j;
-			}
-		}
-		if (i != min)
-		{
-			int temp = arr[min];
-			arr[min] = arr[i];
-			arr[i] = temp;
-		}
-	}
-}
 
 
 
@@ -211,21 +151,6 @@ void test4(std::vector<osg::Vec2d>& result_2dpoints, std::vector<osg::Vec3d>& re
 	curveTangent = tempCurve.getPointsTangent();
 }
 
-void insertTest(int arr[], int size)
-{
-	for (int i = 1; i < size; i++)
-	{
-		for (int j = i; j > 0; j--)
-		{
-			if (arr[j - 1] > arr[j])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j - 1];
-				arr[j - 1] = temp;
-			}
-		}	
-	}
-}
 
 
 int test5()

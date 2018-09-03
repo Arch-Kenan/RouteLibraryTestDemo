@@ -30,25 +30,13 @@
     <ClInclude Include="utility.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="copyCtor.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="zigzag_Method.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="testRoute.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="methodA1.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Queen.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="dynamic.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="newton.h">
+    <ClInclude Include="testRoute.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,9 +48,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="RouteCurveDataImpl.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="GC.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="zigzag_Method.cpp">

@@ -27,7 +27,22 @@
     <ClInclude Include="macro.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
+    <ClInclude Include="..\RouteLibraryTestDemo\copyCtor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RouteLibraryTestDemo\Queen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RouteLibraryTestDemo\newton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\RouteLibraryTestDemo\dynamic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stringMatch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +59,10 @@
     <ClCompile Include="soild.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="srtingMatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

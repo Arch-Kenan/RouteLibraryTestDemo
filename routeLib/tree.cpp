@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "test.h"
+#include "tree.h"
+#include <stack>
 
 int GetHeight(BTnode* root)
 {
@@ -215,6 +216,28 @@ bool DeleteNode(BTnode* &root,int key)
 			//	}
 			//}
 			return true;
+		}
+	}
+}
+
+
+void preTraval(BTnode* root)
+{
+	if (!root)
+		return;
+	std::stack<BTnode*> stack_temp;
+	stack_temp.push(root);
+	int index = 0;
+	while (!stack_temp.empty())
+	{
+		root = stack_temp.top();
+		stack_temp.pop();
+		while (root)
+		{
+			std::cout << index++ << "ä¯ÀÀ½Úµã:" << root->num << std::endl;
+			if (root->rchild)
+				stack_temp.push(root->rchild);
+			root = root->lchild;
 		}
 	}
 }

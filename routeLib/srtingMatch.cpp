@@ -1,8 +1,10 @@
 #include "stdafx.h"
+#include "stringMatch.h"
 
 
-int testK(const char* source, const char* target);
-void makeNext(const char* arr, const int size, int result[]);
+
+//int testK(const char* source, const char* target);
+//void makeNext(const char* arr, const int size, int result[]);
 
 //std::ifstream   file("../testList.txt");
 //std::istreambuf_iterator<char> beg(file), end;
@@ -14,7 +16,7 @@ void makeNext(const char* arr, const int size, int result[]);
 //}
 //
 //file.close();
-int testK(const char* source, const char* target)
+int testKMP(const char* source, const char* target)
 {
 	int strLens = strlen(source);
 	int size = strlen(target);

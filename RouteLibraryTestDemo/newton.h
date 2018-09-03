@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 #include <math.h>
 #include <iostream>
 
@@ -30,6 +31,14 @@ void swap(int& a, int& b)
 	a = b ^ a;
 }
 
+void  stdRand()
+{
+	std::srand(time(0));
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << std::rand() << std::endl;
+	}
+}
 
 
 

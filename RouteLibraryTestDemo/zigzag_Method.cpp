@@ -1,5 +1,5 @@
-#pragma once
-#include "stdafx.h"
+//#pragma once
+//#include "stdafx.h"
 //#include <math.h>
 //#include "zigzag_Method.h"
 //#include "osg/Matrixd"

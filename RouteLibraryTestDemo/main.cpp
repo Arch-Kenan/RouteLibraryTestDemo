@@ -16,23 +16,25 @@
 #include "osgGA/StateSetManipulator"
 
 //inlcude other project
-#include "../routeLib/test.h"
+#include "../routeLib/tree.h"
 
 #include "RouteCurveImpl.h"
 #include "dynamic.h"
 #include "newton.h"
 
 
+
 //平曲线测试主程序
 int main()
 {
-	std::srand(time(0));
-	for (int i = 0; i < 100; i++)
+	std::vector<int>   arr = { 2, 4, 8, 14, 67, 23, 1000, 34, 123, 45 };
+	BTnode*  head = nullptr;
+	for (auto itr = arr.begin(); itr < arr.end(); itr++)
 	{
-		std::cout << std::rand() << "  ";
+		InsertNode(head, *itr);
 	}
-
-
+	preTraval(head);
+	
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
 	osg::ref_ptr<osg::Group> root = new osg::Group;
 	osg::ref_ptr<osg::Geode> geode = new osg::Geode;
@@ -43,31 +45,31 @@ int main()
 	geom->setVertexArray(arrs);
 	geode->addDrawable(geom);
 	//
-	//osg::Vec3d   cenPnt(50, 0, 50);
-	//osg::Vec3d   p0(40, 0.0, 0);
-	//osg::Vec3d   move = p0 - cenPnt;
-	//arrs->push_back(cenPnt);
-	//arrs->push_back(p0);
-	//arrs->push_back(osg::Vec3d(0, 0, 0));
-	//double delta = 0.3;
-	//double roateRadian = 0;23
-	//osg::Matrix    mat;
-	//osg::Matrix    mat1;
-	//osg::Quat      makeQuat;
-	//mat.makeTranslate(-cenPnt);
-	//p0 = mat.preMult(p0);
-	//arrs->push_back(p0);
-	//mat1.makeTranslate(cenPnt);
-	//for (int i = 0; i < 8; i++)
-	//{
-	//	makeQuat.makeRotate(roateRadian, osg::Vec3d(0, 1,0));
-	//	mat.makeRotate(makeQuat);
-	//	osg::Vec3d   tempPnt =mat1.preMult(mat.preMult(p0));
-	//	
-	//	/*tempPnt = mat.preMult(tempPnt);*/
-	//	arrs->push_back(tempPnt);
-	//	roateRadian += delta;
-	//}
+	osg::Vec3d   cenPnt(50, 0, 50);
+	osg::Vec3d   p0(40, 0.0, 0);
+	osg::Vec3d   move = p0 - cenPnt;
+	arrs->push_back(cenPnt);
+	arrs->push_back(p0);
+	arrs->push_back(osg::Vec3d(0, 0, 0));
+	double delta = 0.3;
+	double roateRadian = 0;
+	osg::Matrix    mat;
+	osg::Matrix    mat1;
+	osg::Quat      makeQuat;
+	mat.makeTranslate(-cenPnt);
+	p0 = mat.preMult(p0);
+	arrs->push_back(p0);
+	mat1.makeTranslate(cenPnt);
+	for (int i = 0; i < 8; i++)
+	{
+		makeQuat.makeRotate(roateRadian, osg::Vec3d(0, 1,0));
+		mat.makeRotate(makeQuat);
+		osg::Vec3d   tempPnt =mat1.preMult(mat.preMult(p0));
+		
+		/*tempPnt = mat.preMult(tempPnt);*/
+		arrs->push_back(tempPnt);
+		roateRadian += delta;
+	}
 
 	//geom->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::LINES, 0, arrs->size()));
 
