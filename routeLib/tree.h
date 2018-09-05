@@ -27,4 +27,7 @@ bool ROUTELIB_API RLRotate(BTnode* &root);
 bool ROUTELIB_API InsertNode(BTnode* &root, int key);
 bool ROUTELIB_API DeleteNode(BTnode* &root, int key);
 void ROUTELIB_API preTraval(BTnode* root);
+void ROUTELIB_API midTraval(BTnode* root);
+void ROUTELIB_API reverseMidTraval(BTnode* root);
+void ROUTELIB_API reverse(BTnode* &root);
 //bool DeleteNode(BTnode* &root, int key);

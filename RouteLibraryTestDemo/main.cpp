@@ -27,13 +27,14 @@
 //平曲线测试主程序
 int main()
 {
-	std::vector<int>   arr = { 2, 4, 8, 14, 67, 23, 1000, 34, 123, 45 };
+	std::vector<int>   arr = { 2, 4, 8, 14, 67, 23, 45, 83, 16, 49, 58, 30, 79, 39, 100, 60, 92 };
 	BTnode*  head = nullptr;
 	for (auto itr = arr.begin(); itr < arr.end(); itr++)
 	{
 		InsertNode(head, *itr);
 	}
-	preTraval(head);
+	reverse(head);
+	midTraval(head);
 	
 	osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
 	osg::ref_ptr<osg::Group> root = new osg::Group;
