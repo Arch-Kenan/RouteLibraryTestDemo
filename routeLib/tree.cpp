@@ -2,6 +2,16 @@
 #include "tree.h"
 #include <stack>
 
+
+// test demo
+//std::vector<int>   arr = { 2, 4, 8, 14, 67, 23, 45, 83, 16, 49, 58, 30, 79, 39, 100, 60, 92 };
+//BTnode*  head = nullptr;
+//for (auto itr = arr.begin(); itr < arr.end(); itr++)
+//{
+//	InsertNode(head, *itr);
+//}
+//reverse(head);
+//midTraval(head);
 int GetHeight(BTnode* root)
 {
 	if (root)

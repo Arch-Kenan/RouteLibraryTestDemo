@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="designPattern.h" />
     <ClInclude Include="methodA1.h" />
     <ClInclude Include="RouteCurveData.h" />
     <ClInclude Include="RouteCurveImpl.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="zigzag_Method.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="designPattern.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RouteCurveDataImpl.cpp" />
     <ClCompile Include="stdafx.cpp">
