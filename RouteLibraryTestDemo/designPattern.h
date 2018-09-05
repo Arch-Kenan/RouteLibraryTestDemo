@@ -1,33 +1,22 @@
 #pragma once
 #include <iostream>
+#include <mutex>
+#include <atomic>
+
 
 
 class  single
 {
 public:
-	static single* getInstance()
-	{
-		if (m_data == nullptr)
-		{
-			m_data = new single();
-		}
-		return m_data;
-	}
+	static single* getInstance();
 	single(single& other) = delete;
 	single& operator = (single& other) = delete;
-	~single()
-	{
-		delete m_data;
-	}
+	~single();
 protected:
 private:
-	single()
-	{
-
-	}
-	static single*  m_data;
+	single();
+	static single*  m_data; 
 };
 
-single* single::m_data = nullptr;
 
 
