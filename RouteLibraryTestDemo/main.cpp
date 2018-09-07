@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
-////include osg lib
+//include osg lib
 //#include "osgDB/ReadFile"
 //#include "osgViewer/Viewer"
 //#include "osg/MatrixTransform"
@@ -11,111 +11,42 @@
 //#include "osgGA/StateSetManipulator"
 
 //inlcude other project
-#include "../routeLib/tree.h"
+//#include "../routeLib/tree.h"
 
 #include "RouteCurveImpl.h"
 #include "dynamic.h"
-#include "newton.h"
-#include "designPattern.h"
+#include "mutiThread.h"
+#include "list.h"
 
 
-void greeting()
-{
-	int count = 0;
-	while (count < 5000)
-	{
-		std::cout << " greeting" << count++ <<std::endl;
-	}
-	return;
-}
 
-void greeting1()
-{
-	int count = 0;
-	while (count < 150)
-	{
-		std::cout << "greetingOne" << count++ << std::endl;
-	}
-	return;
-}
 
 
 //平曲线测试主程序
 int main()
 {
-	std::thread   t{ greeting };
-	std::thread   t1{ greeting1};
-	if (t.joinable())
-	{
-		t.detach();
-		
-	}
-	if (t1.joinable())
-	{
-		t1.detach();
-	}
-	greeting1();
-	/*t1.join();*/
+	ListNode*   root = nullptr;
+	ListNode*   root1 = nullptr;
+	ListNode*	res = nullptr;
 
-	
-
-	//single*  one = single::getInstance();
-	//single* two = single::getInstance();
-	//if (one == two)
+	std::vector<int>   arr = { 2, 4, 8, 10, 14, 16, 18 };
+	std::vector<int>   arr1 = { 1 };
+	//for (auto itr = arr.begin(); itr != arr.end(); itr++)
 	//{
-	//	std::cout << " success";
+	//	insertNode(root, *itr);
 	//}
+	for (auto itr = arr1.begin(); itr != arr1.end(); itr++)
+	{
+		insertNode(root1, *itr);
+	}
+	res = Merge(root, root1);
+	travalNode(res);
 
 
 
 
-	
-	//osg::ref_ptr<osgViewer::Viewer> viewer = new osgViewer::Viewer;
-	//osg::ref_ptr<osg::Group> root = new osg::Group;
-	//osg::ref_ptr<osg::Geode> geode = new osg::Geode;
-	//root->addChild(geode.get());
 
-	//osg::ref_ptr<osg::Geometry> geom = new osg::Geometry;
-	//osg::ref_ptr<osg::Vec3dArray>   arrs = new osg::Vec3dArray;
-	//geom->setVertexArray(arrs);
-	//geode->addDrawable(geom);
-	////
-	//osg::Vec3d   cenPnt(50, 0, 50);
-	//osg::Vec3d   p0(40, 0.0, 0);
-	//osg::Vec3d   move = p0 - cenPnt;
-	//arrs->push_back(cenPnt);
-	//arrs->push_back(p0);
-	//arrs->push_back(osg::Vec3d(0, 0, 0));
-	//double delta = 0.3;
-	//double roateRadian = 0;
-	//osg::Matrix    mat;
-	//osg::Matrix    mat1;
-	//osg::Quat      makeQuat;
-	//mat.makeTranslate(-cenPnt);
-	//p0 = mat.preMult(p0);
-	//arrs->push_back(p0);
-	//mat1.makeTranslate(cenPnt);
-	//for (int i = 0; i < 8; i++)
-	//{
-	//	makeQuat.makeRotate(roateRadian, osg::Vec3d(0, 1,0));
-	//	mat.makeRotate(makeQuat);
-	//	osg::Vec3d   tempPnt =mat1.preMult(mat.preMult(p0));
-	//	
-	//	/*tempPnt = mat.preMult(tempPnt);*/
-	//	arrs->push_back(tempPnt);
-	//	roateRadian += delta;
-	//}
 
-	//geom->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::LINES, 0, arrs->size()));
-
-	//osg::ref_ptr<osg::Geometry> geom2to3 = new osg::Geometry;
-	//osg::ref_ptr<osg::Vec3dArray>   arrs2to3 = new osg::Vec3dArray;
-	//geom2to3->setVertexArray(arrs2to3);
-	//geode->addDrawable(geom2to3);
-
-	//std::vector<osg::Vec3d>  resultPnts;
-	//std::vector<osg::Vec2d>  result2Dto3D;
-	//std::vector<osg::Vec2d>  curveTangent;
 
 	/*test4(result2Dto3D, resultPnts, curveTangent);*/
 
