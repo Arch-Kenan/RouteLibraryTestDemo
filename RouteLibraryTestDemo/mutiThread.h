@@ -1,57 +1,57 @@
-//#pragma once
-//#include "stdafx.h"
-//#include <iostream>
-//#include <thread>
-//
-//#include <list>
-//#include <mutex>
-//#include <algorithm>
-//
-//std::list<int>    listN;
-//std::mutex        addMutex;
-//
-//void adToList(int num)
-//{
-//	//std::lock_guard<std::mutex>  guard(addMutex);
-//	addMutex.lock();
-//	listN.push_back(num);
-//	addMutex.unlock();
-//}
-//
-//bool findKey(int Key)
-//{
-//	std::lock_guard<std::mutex>  guard(addMutex);
-//	return std::find(listN.begin(), listN.end(), Key) != listN.end();
-//}
-//
-//
-//
-//std::list<int> some_list;    // 1
-//std::mutex some_mutex;    // 2
-//
-//void add_to_list(int new_value)
-//{
-//	std::lock_guard<std::mutex> guard(some_mutex);    // 3
-//	some_list.push_back(new_value);
-//}
-//
-//bool list_contains(int value_to_find)
-//{
-//	std::lock_guard<std::mutex> guard(some_mutex);    // 4
-//	return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
-//}
-//
-//// gujinjin 08/10/05_06
-//// 避免死锁银行家算法的C++ 编程实现
-//
-//#include<iostream>
-//using namespace std;
-//
-//// p 进程数，r 资源种类
-//#define p 4
-//#define r 3
-//
-//
+#pragma once
+#include "stdafx.h"
+#include <iostream>
+#include <thread>
+
+#include <list>
+#include <mutex>
+#include <algorithm>
+
+std::list<int>    listN;
+std::mutex        addMutex;
+
+void adToList(int num)
+{
+	//std::lock_guard<std::mutex>  guard(addMutex);
+	addMutex.lock();
+	listN.push_back(num);
+	addMutex.unlock();
+}
+
+bool findKey(int Key)
+{
+	std::lock_guard<std::mutex>  guard(addMutex);
+	return std::find(listN.begin(), listN.end(), Key) != listN.end();
+}
+
+
+
+std::list<int> some_list;    // 1
+std::mutex some_mutex;    // 2
+
+void add_to_list(int new_value)
+{
+	std::lock_guard<std::mutex> guard(some_mutex);    // 3
+	some_list.push_back(new_value);
+}
+
+bool list_contains(int value_to_find)
+{
+	std::lock_guard<std::mutex> guard(some_mutex);    // 4
+	return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
+}
+
+// gujinjin 08/10/05_06
+// 避免死锁银行家算法的C++ 编程实现
+
+#include<iostream>
+using namespace std;
+
+// p 进程数，r 资源种类
+#define p 4
+#define r 3
+
+
 ///*-----------------------------------------------*/
 ///*输入函数*/
 ///*-----------------------------------------------*/
@@ -100,7 +100,7 @@
 //	int t[r], finish[p], dd[r];
 //	for (i = 0; i < p; i++)finish[i] = 0;//finish为1即表示available满足某一进程并让其实现
 //
-//	for (i = 0; i < r; i++)dd[i] = d[i];
+//	for (i = 0; i < r; i++) dd[i] = d[i];
 //	cout << "分配序列：\n";
 //	for (k = 0; k < p; k++)            //全搜索，直至实现或不可能实现
 //	{

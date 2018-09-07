@@ -23,7 +23,7 @@
 
 
 //平曲线测试主程序
-int main()
+int maintt()
 {
 	ListNode*   root = nullptr;
 	ListNode*   root1 = nullptr;
