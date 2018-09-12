@@ -1,5 +1,15 @@
 #pragma once
 #include <iostream>
+
+//
+//factortyA A;
+//baseHCurve*  bH = A.createH();
+//baseVCurve*  bV = A.createV();
+//bH->draw();
+//bV->draw();
+//delete bH;
+//delete bV;
+
 enum CURVETYPE
 {
 	HC,

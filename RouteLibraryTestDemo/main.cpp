@@ -5,22 +5,13 @@
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+#include <vector>
+#include <algorithm>
+#include <functional>
 
-//include osg lib
-//#include "osgDB/ReadFile"
-//#include "osgViewer/Viewer"
-//#include "osg/MatrixTransform"
-//#include "osgViewer/ViewerEventHandlers"
-//#include "osgGA/StateSetManipulator"
 
 //inlcude other project
-//#include "../routeLib/tree.h"
-
-#include "RouteCurveImpl.h"
-#include "dynamic.h"
-#include "mutiThread.h"
-#include "list.h"
-#include "factoryMethod.h"
+#include "compositePatten.h"
 
 
 
@@ -28,18 +19,15 @@
 
 
 
+
+using namespace std;
 //平曲线测试主程序
 int main()
 {
-	factortyA A;
-	baseHCurve*  bH = A.createH();
-	baseVCurve*  bV = A.createV();
-	bH->draw();
-	bV->draw();
-	delete bH;
-	delete bV;
-	
-
+	curve*   ptrH = new hCurve();
+	curve*   ptrV = new vCurve();
+	deCurve  dPtr = new deCurveA(ptrH);
+	dPtr.show();
 
 	
 

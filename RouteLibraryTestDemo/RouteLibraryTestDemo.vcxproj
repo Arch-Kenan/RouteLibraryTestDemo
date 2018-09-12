@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="compositePatten.h" />
     <ClInclude Include="designPattern.h" />
     <ClInclude Include="factoryMethod.h" />
     <ClInclude Include="list.h" />
