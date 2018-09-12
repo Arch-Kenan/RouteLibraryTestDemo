@@ -1,8 +1,11 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_DEPRECATE  
 #include "stdafx.h"
 #include <stdio.h>
 #include <iostream>
 #include <thread>
+
 //include osg lib
 //#include "osgDB/ReadFile"
 //#include "osgViewer/Viewer"
@@ -17,38 +20,28 @@
 #include "dynamic.h"
 #include "mutiThread.h"
 #include "list.h"
+#include "factoryMethod.h"
+
+
 
 
 
 
 
 //平曲线测试主程序
-int maintt()
+int main()
 {
-	ListNode*   root = nullptr;
-	ListNode*   root1 = nullptr;
-	ListNode*	res = nullptr;
-
-	std::vector<int>   arr = { 2, 4, 8, 10, 14, 16, 18 };
-	std::vector<int>   arr1 = { 1 };
-	//for (auto itr = arr.begin(); itr != arr.end(); itr++)
-	//{
-	//	insertNode(root, *itr);
-	//}
-	for (auto itr = arr1.begin(); itr != arr1.end(); itr++)
-	{
-		insertNode(root1, *itr);
-	}
-	res = Merge(root, root1);
-	travalNode(res);
+	factortyA A;
+	baseHCurve*  bH = A.createH();
+	baseVCurve*  bV = A.createV();
+	bH->draw();
+	bV->draw();
+	delete bH;
+	delete bV;
+	
 
 
-
-
-
-
-
-	/*test4(result2Dto3D, resultPnts, curveTangent);*/
+	
 
 
 
