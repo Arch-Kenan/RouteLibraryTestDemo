@@ -57,6 +57,12 @@
     <ClInclude Include="compositePatten.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="stirngOP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="serialize.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

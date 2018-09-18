@@ -4,6 +4,9 @@
 #include "stdafx.h"
 #include <stdio.h>
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <fstream>
 #include <thread>
 #include <vector>
 #include <algorithm>
@@ -14,20 +17,36 @@
 #include "compositePatten.h"
 
 
+int strcpy(char* des, char* src)
+{
 
-
-
-
+}
 
 
 using namespace std;
 //平曲线测试主程序
 int main()
 {
-	curve*   ptrH = new hCurve();
-	curve*   ptrV = new vCurve();
-	deCurve  dPtr = new deCurveA(ptrH);
-	dPtr.show();
+	char chrs[20];
+	int a = 123;
+	sprintf(chrs, "%d ", a);
+	string   strs(chrs);
+	char chrs1[20];
+	int b = 576;
+	sprintf(chrs1, "%d ", b);
+	string   strs1(chrs1);
+	strs += strs1;
+
+	stringstream   ss(strs);
+	int  word;
+	while (ss >> word)
+		cout << ++word << endl;
+
+
+
+
+
+
 
 	
 
