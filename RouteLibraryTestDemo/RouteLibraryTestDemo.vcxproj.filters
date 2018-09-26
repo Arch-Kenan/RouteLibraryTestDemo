@@ -57,10 +57,10 @@
     <ClInclude Include="compositePatten.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="stirngOP.h">
+    <ClInclude Include="serialize.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="serialize.h">
+    <ClInclude Include="stlOP.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
