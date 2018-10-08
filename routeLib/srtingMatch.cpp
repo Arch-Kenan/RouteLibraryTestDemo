@@ -76,3 +76,61 @@ void makeNext(const char* arr, const int size, int result[])
 
 	}
 }
+
+
+
+void getNext2(char * p, int * next)
+{
+	next[0] = 0;
+	int  len = strlen(p);
+	for (int post = 1; post < len; post++)
+	{
+		int pre = 0;
+		int num = 0;
+		int cur = 0;
+		int temp = 0;
+		for (int index = 1; index <= post; index++)
+		{
+			pre = 0;
+			cur = index;
+			temp = index;
+			while (cur <= post && p[pre++] == p[cur])
+			{
+				++num;
+				temp = cur++;
+			}
+			if (temp != post)
+				num = 0;
+			else
+			{
+				next[post] = num;
+				break;
+			}
+		}
+	}
+}
+
+int kmp(char * t, char * p)
+{
+	int pTar = 0;
+	int pPat = 0;
+	int lenP = strlen(p);
+	int* arrs = new int[lenP];
+	getNext2(p, arrs);
+
+	while (pTar < strlen(t) || pPat < lenP)
+	{
+		if (t[pTar] == p[pPat])
+		{
+			++pTar;
+			++pPat;
+		}
+		else
+		{
+			pPat = arrs[pPat];
+			++pTar;
+		}
+	}
+	return pTar - pPat;
+
+}

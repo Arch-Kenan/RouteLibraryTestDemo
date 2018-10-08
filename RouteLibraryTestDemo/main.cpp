@@ -16,6 +16,7 @@
 
 //inlcude other project
 #include "compositePatten.h"
+#include "sort.hpp"
 using namespace std;
 
 
@@ -24,11 +25,13 @@ using namespace std;
 //平曲线测试主程序
 int main()
 {
-
-	int b = 8;
-	int a = 3;
-	double  c =  b / a;
-	std::cout << c;
+	int arrs[10] = { 56, 4, 87, 43, 56, 77, 22, 33, 29 , 99};
+	quickSort(arrs, 0, 9);
+	for (auto n : arrs)
+	{
+		std::cout << n << "   ";
+	}
+	
 	
 
 
