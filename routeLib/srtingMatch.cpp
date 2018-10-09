@@ -134,3 +134,71 @@ int kmp(char * t, char * p)
 	return pTar - pPat;
 
 }
+
+
+
+void getNext2(char * p, int * next)
+{
+	next[0] = 0;
+	int  len = strlen(p);
+	for (int post = 1; post < len; post++)
+	{
+		int pre = 0;
+		int num = 0;
+		int cur = 0;
+		int temp = 0;
+		for (int index = 1; index <= post; index++)
+		{
+			pre = 0;
+			cur = index;
+			temp = index;
+			while (cur <= post && p[pre++] == p[cur])
+			{
+				++num;
+				temp = cur++;
+			}
+			if (temp != post)
+				num = 0;
+			else
+			{
+				next[post] = num;
+				break;
+			}
+		}
+	}
+}
+
+int kmp2(char * t, char * p)
+{
+	int pTar = 0;
+	int pPat = 0;
+	int lenT = strlen(t);
+	int lenP = strlen(p);
+	int* next = new int[lenP];
+	getNext2(p, next);
+
+	while (pTar < lenT && pPat < lenP)
+	{
+		if (t[pTar] == p[pPat])
+		{
+			++pTar;
+			++pPat;
+		}
+		else
+		{
+			if (pPat != 0)
+				pPat = next[pPat - 1];
+			else
+				pTar++;
+			//pPat = -1;
+		}
+	}
+	delete[] next;
+	return pTar - pPat;
+
+	//if (pTar < strlen(t))
+	//	return pTar - pPat;
+	//else
+	//	return -1;
+
+}
